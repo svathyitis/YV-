@@ -75,8 +75,15 @@ h4 { font-size: 0.8rem; font-weight: 500; }
   margin: 0.4rem 0 1.2rem;
 }
 
-h1, h2, h3 {
+h2, h3 {
   color: #b69ad4; /* your signature purple */
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #5a3360; /* deep rich plum */
 }
 
 
