@@ -1,33 +1,52 @@
-/* Tailwind-inspired static styles for purple theme */
 body {
-  background-color: #4c1d95;
-  color: white;
+  margin: 0;
   font-family: 'Inter', sans-serif;
-  padding: 1rem;
+  background-color: #2e1065; /* deep purple */
+  color: #fff;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #e0b3ff;
+  text-shadow: 0 0 10px #c084fc;
 }
 
-h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-div {
-  max-width: 42rem;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  padding: 1.5rem;
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #5b21b6;
   border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #fcd34d;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #d8b4fe;
+}
+
+.card .book {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #c4b5fd;
+  margin-bottom: 1rem;
+}
+
+.card .story {
+  line-height: 1.6;
 }
