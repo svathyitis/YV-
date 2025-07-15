@@ -1,3 +1,4 @@
+<style>
 :root {
   --bg: #f4f6f9;
   --text: #1c1c1e;
@@ -6,6 +7,7 @@
   --accent: #6a5799;
   --accent-hover: #8473c6;
   --box-bg: #ffffff;
+  --location-color: #555;
 }
 
 body {
@@ -13,30 +15,31 @@ body {
   background: var(--bg);
   color: var(--text);
   padding: 22px 14px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.4s, color 0.4s;
 }
 
-/* iPhone Card Frame */
+/* iPhone-style container */
 .iphone-frame {
   position: relative;
   background: var(--box-bg);
   border-radius: 36px;
   max-width: 390px;
-  margin: 1.5rem auto;
+  margin: 0 auto 32px auto;
   padding: 30px 22px;
   border: 1px solid var(--border);
-  box-shadow: 0 0 0.5px rgba(144, 137, 245, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   z-index: 1;
 }
 
+/* Neon animated border */
 .iphone-frame::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 36px;
-  pointer-events: none;
   z-index: -1;
+  pointer-events: none;
   border: 1.5px solid transparent;
   background: linear-gradient(135deg, #9089f5, #f093fb, #9089f5) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -51,45 +54,48 @@ body {
   50% { opacity: 0.4; }
 }
 
-/* Headings & Text */
 h1, h2, h3, h4 {
-  margin-bottom: 0.75rem;
-  color: var(--text);
+  margin: 0 0 0.5rem;
 }
+
+h1 { font-size: 1.4rem; font-weight: 600; }
+h2 { font-size: 1.25rem; font-weight: 500; }
+h3 { font-size: 1.1rem; font-weight: 500; margin-top: 1.3rem; }
+h4 { font-size: 0.8rem; font-weight: 500; }
 
 .subtitle {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.timeline {
-  list-style: none;
-  font-size: 0.75rem;
-  padding-left: 0;
-  color: var(--muted);
+.info-block p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0.4rem 0 1.2rem;
 }
 
-/* Moon Toggle */
-.toggle-container {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 390px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* Dark Mode */
+/* Dark mode setup */
 body.dark {
   --bg: #1c1c1e;
-  --text: #f1f1f1;
+  --text: #e0e0e0;
   --muted: #aaa;
-  --border: #333;
-  --accent: #8473c6;
-  --accent-hover: #a18bef;
+  --border: #444;
   --box-bg: #2c2c2e;
+  --location-color: #b69ad4;
 }
 
-body.dark h1, body.dark h2, body.dark h3 {
-  color: #b69ad4;
+/* Toggle moon icon container */
+#mode-toggle {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 16px 22px 4px;
+  display: flex;
+  justify-content: flex-end;
 }
+#moon-icon {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+</style>
