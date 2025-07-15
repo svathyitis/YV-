@@ -229,4 +229,38 @@ input:checked + .slider:before {
   border: 1px solid var(--border);
   transition: background 0.3s ease;
 }
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+/* Icon Button */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent);
+  transition: color 0.3s;
+}
+#theme-toggle:hover {
+  color: var(--accent-hover);
+}
+
+/* Dark Mode Variables */
+body.dark {
+  --bg: #1c1c1e;
+  --text: #f4f4f5;
+  --muted: #aaa;
+  --border: #333;
+  --accent: #8473c6;
+  --accent-hover: #a18bef;
+  --box-bg: #2a2a35;
+}
+
+/* Transition on theme change */
+body, .iphone-frame, .card, .story-section {
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
 
