@@ -75,6 +75,11 @@ h4 { font-size: 0.8rem; font-weight: 500; }
   margin: 0.4rem 0 1.2rem;
 }
 
+h1, h2, h3 {
+  color: #b69ad4; /* your signature purple */
+}
+
+
 /* Dark mode setup */
 body.dark {
   --bg: #1c1c1e;
