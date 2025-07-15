@@ -11,256 +11,85 @@
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
-  color: var(--text); 
+  color: var(--text);
   padding: 22px 14px;
+  transition: background 0.3s, color 0.3s;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 2rem;
+/* iPhone Card Frame */
+.iphone-frame {
+  position: relative;
+  background: var(--box-bg);
+  border-radius: 36px;
+  max-width: 390px;
+  margin: 1.5rem auto;
+  padding: 30px 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 0.5px rgba(144, 137, 245, 0.5);
+  overflow: hidden;
+  z-index: 1;
 }
 
-h1 {
-  font-size: 2.1rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  text-align: center;
+.iphone-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  pointer-events: none;
+  z-index: -1;
+  border: 1.5px solid transparent;
+  background: linear-gradient(135deg, #9089f5, #f093fb, #9089f5) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: subtlePulse 6s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+/* Headings & Text */
+h1, h2, h3, h4 {
+  margin-bottom: 0.75rem;
+  color: var(--text);
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   color: var(--muted);
   margin-bottom: 1rem;
-  text-align: center;
 }
 
-.description {
-  font-size: 1rem;
+.timeline {
+  list-style: none;
+  font-size: 0.75rem;
+  padding-left: 0;
   color: var(--muted);
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
-/* Cards */
-.chapter-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 2rem;
+/* Moon Toggle */
+.toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.card {
-  background: var(--box-bg);
-  border-radius: 18px;
-  padding: 25px 20px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  text-decoration: none;
-}
-
-.card:hover {
-  background: #f8faff;
-  transform: translateY(-4px);
-}
-
-.card-day {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.card-title {
-  font-size: 1.15rem;
-  color: var(--text);
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.card-subtitle {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.card-book {
-  background: #f1f2f6;
-  border-radius: 12px;
-  padding: 6px 12px;
-  font-size: 0.78rem;
-  color: var(--accent);
-}
-
-/* Story section */
-.story-section {
-  background: var(--box-bg);
-  border-radius: 18px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 900px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  border: 1px solid var(--border);
-}
-
-.story-section h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.story-section p {
-  font-size: 1rem;
-  line-height: 1.65;
-  margin: 0.6rem 0;
-}
-
-.lesson-box,
-.reflection-box {
-  background: #f9f9fb;
-  border-left: 4px solid var(--accent);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 10px;
-}
-
-.lesson-box h4,
-.reflection-box h4 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-}
-
-.lesson-box p,
-.reflection-box p {
-  font-size: 0.95rem;
-  color: var(--text);
-  margin: 0;
-}
-
-
-:root {
-  --bg: #f4f6f9;
-  --text: #1c1c1e;
-  --muted: #777;
-  --border: #d9e1ec;
-  --accent: #6a5799;
-  --accent-hover: #8473c6;
-  --box-bg: #ffffff;
-}
-
+/* Dark Mode */
 body.dark {
   --bg: #1c1c1e;
   --text: #f1f1f1;
   --muted: #aaa;
   --border: #333;
-  --accent: #9d7bff;
-  --accent-hover: #bfa8ff;
-  --box-bg: #2a2a2f;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* Toggle */
-.toggle-container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 1rem;
-  margin-top: -1rem;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 48px;
-  height: 24px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--muted);
-  transition: 0.4s;
-  border-radius: 24px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: var(--accent);
-}
-
-input:checked + .slider:before {
-  transform: translateX(24px);
-}
-
-.iphone-frame {
-  background: var(--box-bg);
-  border-radius: 36px;
-  max-width: 390px;
-  width: 100%;
-  margin: 2rem auto;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  padding: 30px 22px;
-  border: 1px solid var(--border);
-  transition: background 0.3s ease;
-}
-/* Toggle Container */
-.toggle-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-}
-
-/* Icon Button */
-#theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--accent);
-  transition: color 0.3s;
-}
-#theme-toggle:hover {
-  color: var(--accent-hover);
-}
-
-/* Dark Mode Variables */
-body.dark {
-  --bg: #1c1c1e;
-  --text: #f4f4f5;
-  --muted: #aaa;
-  --border: #333;
   --accent: #8473c6;
   --accent-hover: #a18bef;
-  --box-bg: #2a2a35;
+  --box-bg: #2c2c2e;
 }
 
-/* Transition on theme change */
-body, .iphone-frame, .card, .story-section {
-  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+body.dark h1, body.dark h2, body.dark h3 {
+  color: #b69ad4;
 }
-
