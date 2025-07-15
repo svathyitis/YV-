@@ -138,3 +138,82 @@ h1 {
   color: var(--text);
   margin: 0;
 }
+
+
+:root {
+  --bg: #f4f6f9;
+  --text: #1c1c1e;
+  --muted: #777;
+  --border: #d9e1ec;
+  --accent: #6a5799;
+  --accent-hover: #8473c6;
+  --box-bg: #ffffff;
+}
+
+body.dark {
+  --bg: #1c1c1e;
+  --text: #f1f1f1;
+  --muted: #aaa;
+  --border: #333;
+  --accent: #9d7bff;
+  --accent-hover: #bfa8ff;
+  --box-bg: #2a2a2f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Toggle */
+.toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1rem;
+  margin-top: -1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--muted);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
