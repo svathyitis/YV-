@@ -1,52 +1,160 @@
+/* Base layout */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #2e1065; /* deep purple */
-  color: #fff;
   padding: 2rem;
+  font-family: "Georgia", serif;
+  background: linear-gradient(135deg, #2C3E50 0%, #4A6741 100%);
+  color: #ffffff;
 }
 
+/* Container wrapper */
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Page title */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+/* Intro tagline */
+.subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #E8E8E8;
+  margin-bottom: 0.5rem;
+}
+
+/* Description text */
+.description {
+  font-size: 1.2rem;
+  color: #B8B8B8;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Chapter grid */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 2rem;
+}
+
+/* Chapter card */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 25px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+.card-day {
+  font-size: 0.9rem;
+  color: #B8B8B8;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #D0D0D0;
+  margin-bottom: 10px;
+}
+
+.card-book {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: #E8E8E8;
+}
+
+/* Individual story section */
+.story-section {
   max-width: 900px;
   margin: 0 auto;
-}
-
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
   margin-bottom: 2rem;
-  color: #e0b3ff;
-  text-shadow: 0 0 10px #c084fc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #5b21b6;
-  border-radius: 1rem;
+/* Reflection / Moral boxes */
+.lesson-box,
+.reflection-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
-.card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #fcd34d;
+.lesson-box h4,
+.reflection-box h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 
-.card h3 {
+.lesson-box p,
+.reflection-box p {
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #d8b4fe;
-}
-
-.card .book {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #c4b5fd;
-  margin-bottom: 1rem;
-}
-
-.card .story {
   line-height: 1.6;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
 }
